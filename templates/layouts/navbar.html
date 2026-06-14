@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    <li><a href="{{ url_for('marketplace.home') }}">Marketplace</a></li>
+    <li><a href="{{ url_for('company.dashboard') }}">Company</a></li>
+    <li><a href="{{ url_for('assistant.chat') }}">Assistant</a></li>
+    <li><a href="{{ url_for('inventory.my_products') }}">Inventory</a></li>
+    <li><a href="{{ url_for('analytics.health_score') }}">Analytics</a></li>
+    {% if current_user.is_authenticated %}
+      <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+    {% else %}
+      <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+    {% endif %}
+  </ul>
+</nav>
